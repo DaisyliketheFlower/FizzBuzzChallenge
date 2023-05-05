@@ -1,22 +1,32 @@
-Console.WriteLine("Please input a number");
-int number = int.parse(Console.ReadLine());
-FizzBuzz(number);
+namespace FizzBuzzChallenge;
 
-public static string FizzBuzz(int userInput)
+public class Program 
 {
-    if (userInput == % 3 == 0)
+    public static void Main() 
     {
-      return "fizz";
+        Console.WriteLine("Please input a number");
+        int number = int.parse(Console.ReadLine());
+        FizzBuzz(number);
     }
-    else if (userInput % 5 == 0)
+
+    public static string FizzBuzz(int userInput)
     {
-      return "buzz";
+    
+        if (userInput % 3 == 0)
+        {
+            return "fizz";
+        }
+        else if (userInput % 5 == 0)
+        {
+            return "buzz";
+        }
+        else if (userInput % 3 == 0 && userInput % 5 == 0)
+        {
+            return "fizzbuzz";
+        }
+        else
+        {
+            return "No fizzbuzz for you :(";
+        }
     }
-    else if (userInput % 3 == 0 && userInput % 5 == 0)
-    {
-      return "fizzbuzz";
-    }
-    else
-    {
-       return "No fizzbuzz for you :(";
-    }
+}
