@@ -6,27 +6,39 @@ public class Program
     {
         Console.WriteLine("Please input a number");
         int number = int.parse(Console.ReadLine());
-        FizzBuzz(number);
+        var answer = FizzBuzz(number);
+        Console.WriteLine(answer);
     }
 
-    public static string FizzBuzz(int userInput)
+     public static string FizzBuzz(int userInput)
     {
-    
-        if (userInput % 3 == 0)
+        var answer = "";
+
+        if(userInput % 3 == 0)
         {
-            return "fizz";
+            answer += $"{userInput}";
         }
-        else if (userInput % 5 == 0)
+        if(userInput % 5 == 0)
+        {
+            answer += $"{userInput}";
+        } 
+
+        return answer;
+        if (userInput % 3 == 0 && userInput % 5 == 0)
+        {
+            return "fizzbuzz";
+        }
+         else if (userInput % 5 == 0)
         {
             return "buzz";
         }
-        else if (userInput % 3 == 0 && userInput % 5 == 0)
+          if (userInput % 3 == 0)
         {
-            return "fizzbuzz";
+            return "fizz";
         }
         else
         {
             return "No fizzbuzz for you :(";
-        }
+        } 
     }
 }
