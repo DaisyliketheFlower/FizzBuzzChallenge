@@ -1,44 +1,31 @@
 namespace FizzBuzzChallenge;
 
-public class Program 
+public class FizzBuzz
 {
-    public static void Main() 
+    public static int Buzz() 
     {
-        Console.WriteLine("Please input a number");
-        int number = int.parse(Console.ReadLine());
-        var answer = FizzBuzz(number);
-        Console.WriteLine(answer);
-    }
+        Console.WriteLine("See if a number is divisble by 3 or 5");
+            var userInput = int.Parse(Console.ReadLine());
 
-     public static string FizzBuzz(int userInput)
-    {
-        var answer = "";
+           if(userInput % 3 == 0 && userInput % 5 == 0)
+            {
+                Console.WriteLine("Fizzbuzz");
+                return userInput;
 
-        if(userInput % 3 == 0)
-        {
-            answer += $"{userInput}";
-        }
-        if(userInput % 5 == 0)
-        {
-            answer += $"{userInput}";
-        } 
+            }
+            else if(userInput % 3 == 0)
+            {
+                Console.WriteLine("Fizz");
+               return userInput;
+            }
+            else if(userInput % 5 == 0)
+            {
+                Console.WriteLine("Buzz");
+                return userInput;
+            }
 
-        return answer;
-        if (userInput % 3 == 0 && userInput % 5 == 0)
-        {
-            return "fizzbuzz";
-        }
-         else if (userInput % 5 == 0)
-        {
-            return "buzz";
-        }
-          if (userInput % 3 == 0)
-        {
-            return "fizz";
-        }
-        else
-        {
-            return "No fizzbuzz for you :(";
-        } 
+            Console.WriteLine("it's not divisable by 3 or 5");
+            return userInput;
+            
     }
 }
